@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block content %}
+	<!-- Main Section Start -->
+    <div class="main-section" style="border-radius:20px">
+        {% include 'includes/cover.html'%}
+        <div class="page-section account-header buyer-logged-in">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                       {% include 'includes/v_sidebar.html'%}
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class="user-dashboard loader-holder">
+                            <div class="user-holder">
+                           
+                            </div >
+                                    
+                                
+                             
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Section End -->
+{% include 'includes/alerts.html'%}
+
+{% endblock%}       

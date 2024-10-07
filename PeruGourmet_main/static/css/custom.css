@@ -1,0 +1,43 @@
+@keyframes show-toast {
+    0% {
+        bottom: -100px; /* Start below the viewport */
+    }
+    10% {
+        bottom: 20px; /* Position it at a visible point */
+    }
+    90% {
+        bottom: 20px; /* Keep it in place for most of the animation */
+    }
+    100% {
+        bottom: -100px; /* Move it out of view again */
+    }
+}
+
+.show-notification {
+    position: fixed;
+    bottom: -100px; /* Initial position off-screen */
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 5s;
+}
+
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
