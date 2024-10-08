@@ -1,4 +1,4 @@
-from django import forms
+from django import forms 
 from vendor.models import Vendor 
 from accounts.validators import allow_only_images_validator
 

@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect 
 from .forms import VendorForm
 from accounts.forms import UserProfileForm
 
 from accounts.models import UserProfile
 from .models import Vendor
-from django.contrib import messages
+from django.contrib import messages 
 
-from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.decorators import login_required, user_passes_test 
 from accounts.views import check_role_vendor
 
 @login_required(login_url='login')
