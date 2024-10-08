@@ -11,6 +11,8 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_decode
 from vendor.models import Vendor
 
+
+
 # Create your views here.
 
 # restict the vendor from accessing the registerUser page

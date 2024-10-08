@@ -92,8 +92,7 @@ class UserProfile(models.Model):
     user = OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='users/profile_pictures', null=True, blank=True)
     cover_photo = models.ImageField(upload_to='users/cover_photos', null=True, blank=True)
-    address_line_1 = models.CharField(max_length=50, null=True, blank=True)
-    address_line_2 = models.CharField(max_length=50, null=True, blank=True)
+    address = models.CharField(max_length=250, null=True, blank=True)
     country = models.CharField(max_length=15, null=True, blank=True)
     state = models.CharField(max_length=15, null=True, blank=True)
     city = models.CharField(max_length=15, null=True, blank=True)
@@ -103,8 +102,8 @@ class UserProfile(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
-    def full_address(self):
-        return f'{self.address_line_1}, {self.address_line_2}'
+    # def full_address(self):
+    #     return f'{self.address_line_1}, {self.address_line_2}'
 
     def __str__(self):
         return self.user.email
