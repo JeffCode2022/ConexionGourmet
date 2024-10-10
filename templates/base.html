@@ -50,6 +50,11 @@
 	<link href="{% static 'css/widget.css'%} " rel="stylesheet">
 	<link href="{% static 'css/responsive.css'%} " rel="stylesheet">
 	<link href="{% static 'css/rtl.css'%} " rel="stylesheet">
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}&libraries=places&callback=initAutoComplete" defer></script>
+	<script src="{% static 'js/custom.js'%}"></script>
+
+
 	<!-- Themes / plugin Link End-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="{% static 'js/modernizr.js'%} "></script>

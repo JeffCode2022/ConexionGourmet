@@ -112,7 +112,6 @@ textarea { height: 175px; }
 .field-holder select { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-box-shadow: none; box-shadow: none; box-sizing: border-box; color: #999; font-size: 14px; height: 36px; line-height: 36px; padding: 10px 15px; width: 100%; border: 1px solid #e4e4e4; font-family: 'Open Sans', sans-serif; font-weight: 400; }
 .field-holder textarea, .field-holder input.field-input[type=date], .field-holder input[type=datetime], .field-holder input[type=datetime-local], .field-holder input[type=email], .field-holder input[type=month], .field-holder input[type=number], .field-holder input[type=password], .field-holder input[type=range], .field-holder input[type=search], .field-holder input[type=tel], .field-holder input[type=text], .field-holder input[type=time], .field-holder input[type=url], .field-holder input[type=week] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-box-shadow: none; box-shadow: none; box-sizing: border-box; color: #9097a1; font-size: 12px; height: 40px; line-height: 40px; padding: 0 15px; width: 100%; border: 1px solid #eceef4; font-family: 'Open Sans', sans-serif; font-weight: 400; }
 .field-holder textarea { height: 175px; }
-.main-search.fancy .field-holder .select-location input[type="text"]::-ms-clear, input[type="search"]::-ms-clear, input[type="text"]::-ms-clear { display: none; }
 /* Field Input Size Style */
 .field-holder { width: 100%; display: inline-block; vertical-align: top; margin-right: -4px; }
 .field-lg, .field-md, .field-sm, .field-xs { display: inline-block; vertical-align: top; margin-right: -4px; }
@@ -517,7 +516,6 @@ a.slicknav_btn.slicknav_open .slicknav_icon-bar:first-child { position: absolute
 .field-holder .chosen-container .chosen-results li { padding: 6px 6px; color: #9097a1; font-size: 12px; }
 .field-holder .chosen-container .chosen-results li.highlighted { color: #fff; background-image: none; }
 /* Payment Info Style */
-.reservation-form .field-holder input.has-border[type="text"] { background-color: #fdfdfd; border: 1px solid #f0f0f0; }
 .reservation-form .payment-info { background-color: #fff; padding: 30px; border-radius: 3px; }
 .reservation-form .payment-info .element-title h5, .reservation-form .payment-info .element-title h3, .reservation-form .payment-info .element-title h2, .reservation-form .payment-info .element-title h4 { text-transform: uppercase; margin: 0px; }
 .reservation-form .payment-info .element-title { margin-bottom: 12px; }
@@ -540,7 +538,6 @@ a.slicknav_btn.slicknav_open .slicknav_icon-bar:first-child { position: absolute
 .payment-info .checkbox-area input[type="checkbox"]:checked + label:before { content: "\e9af"; font-size: 9px; color: #2f313a; font-family: "icomoon"; line-height: 15px; }
 /* Social Network Style */
 .reservation-form .social-network .field-holder { position: relative; }
-.reservation-form .social-network .field-holder input[type="text"] { padding-left: 35px; }
 .reservation-form .social-network .field-holder i { position: absolute; left: 14px; top: 14px; color: #9097a1; font-size: 14px; }
 .reservation-form .social-network .field-holder .checkbox-area label { line-height: 22px; cursor: pointer; }
 .reservation-form .social-network .field-holder .checkbox-area label::before { top: 6px; }
@@ -863,16 +860,8 @@ a.slicknav_btn.slicknav_open .slicknav_icon-bar:first-child { position: absolute
 .comment-form .form-holder form [class*="col-lg"], .comment-form .form-holder form [class*="col-md"], .comment-form .form-holder form [class*="col-sm"], .comment-form .form-holder form [class*="col-xs"] { padding: 0 8px; }
 .comment-form .form-holder form .field-holder strong { display: block; color: #484848; font-size: 12px; text-transform: uppercase; font-family: 'Open Sans', sans-serif; font-weight: 600; margin: 0 0 4px 0; }
 .comment-form .form-holder form .field-holder label { display: block; position: relative; margin: 0; }
-.comment-form .form-holder form .field-holder label input[type="text"] { outline: none; -webkit-box-shadow: none; box-shadow: none; border: 0; height: 38px; line-height: 38px; padding: 10px 20px; }
 .comment-form .form-holder form .field-holder label .button { text-decoration: none; border: 0; outline: none; -webkit-box-shadow: none; box-shadow: none; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 12px; padding: 7px 21px; text-align: center; border-radius: 2px; }
-.comment-form .form-holder form .field-holder label input[type="text"]::-webkit-input-placeholder { color: #c0c2cc; }
-.comment-form .form-holder form .field-holder label input[type="text"]:-moz-placeholder { color: #c0c2cc; opacity: 1; }
-.comment-form .form-holder form .field-holder label input[type="text"]::-moz-placeholder { color: #c0c2cc; opacity: 1; }
-.comment-form .form-holder form .field-holder label input[type="text"]:-ms-input-placeholder { color: #c0c2cc; }
-.comment-form .form-holder form .field-holder label input[type="text"]:focus::-webkit-input-placeholder { color: transparent; }
-.comment-form .form-holder form .field-holder label input[type="text"]:focus:-moz-placeholder { color: transparent; }
-.comment-form .form-holder form .field-holder label input[type="text"]:focus::-moz-placeholder { color: transparent; }
-.comment-form .form-holder form .field-holder label input[type="text"]:focus:-ms-input-placeholder { color: transparent; }
+
 .comment-form .form-holder form .field-holder label textarea { line-height: 24px; padding: 10px 20px; }
 .comment-form .form-holder form .field-holder label textarea::-webkit-input-placeholder { color: #c0c2cc; }
 .comment-form .form-holder form .field-holder label textarea:-moz-placeholder { color: #c0c2cc; opacity: 1; }
@@ -915,7 +904,6 @@ a.slicknav_btn.slicknav_open .slicknav_icon-bar:first-child { position: absolute
 #footer .footer-widget .widget-newsletter .widget-title h5 { font-size: 20px !important; margin-bottom: 0; text-transform: uppercase !important; color: #adb0b6 !important; font-weight: 700 !important; }
 ::-moz-placeholder { opacity: 1; }
 .footer-widget .widget-newsletter .fieldset form .field-holder { width: 77%; display: inline-block; }
-.footer-widget .widget-newsletter .fieldset form .field-holder input[type="text"] { color: #b4b4b4; height: 47px; padding: 0 0 0 20px; background: #fff; border: none; border-radius: 4px; font-size: 14px; font-family: 'Open Sans', sans-serif; font-weight: 400; -webkit-box-shadow: none; box-shadow: none; }
 .footer-widget .widget-newsletter .fieldset form .field-holder.btn-holder { display: inline-block; width: 20%; margin-left: 15px; }
 .footer-widget .widget-newsletter .fieldset form .field-holder.btn-holder input[type="submit"] { border: 1px solid #c33332; color: #fff; font-size: 12px; font-weight: bold; height: 47px; padding: 0 29px; text-transform: uppercase; background: none; border-radius: 4px; line-height: 45px; background-color: #c33332; }
 .footer-widget .widget-newsletter form .field-holder label i { display: none; }
@@ -1144,13 +1132,7 @@ foodbakery ki style.css mein footer k style k baad add karwin isy #footer.footer
 /*Register Form Style Start*/
 .field-holder { position: relative; }
 .signup-form .field-holder label, .signup-form .field-holder label { color: #484848; display: block; font-size: 12px; line-height: normal; margin: 0 0 10px; text-transform: uppercase; font-family: "Karla", sans-serif; }
-.signup-form .field-holder input[type="text"], .signup-form .field-holder textarea, .invite-member .field-holder input[type="text"], .signup-form .field-holder input[type="password"], .signup-form .field-holder input[type="text"], .signup-form .field-holder input[type="password"], .newsletter .field-holder input[type="text"], .newsletter .field-holder textarea, .newsletter .field-holder input[type="password"] { background-color: #fff; border: 1px solid #f4f4f4; border-radius: 3px; color: #919191; font-size: 12px; height: 34px; margin: 0 0 15px; padding: 0 12px; }
 .signup-form .field-holder input[type=email] { border: 1px solid #f4f4f4; border-radius: 3px; color: #919191; font-size: 12px; height: 34px; margin: 0 0 15px; padding: 0 12px; }
-.signup-form .field-holder .chosen-container-single .chosen-search input[type="text"] { margin: 0; height: 28px; }
-.signup-form .field-holder input[type="text"]::-webkit-input-placeholder, .signup-form .field-holder textarea::-webkit-input-placeholder { opacity: 1; }
-.signup-form .field-holder input[type="text"]:-moz-placeholder, .signup-form .field-holder textarea:-moz-placeholder { opacity: 1; }
-.signup-form .field-holder input[type="text"]::-moz-placeholder, .signup-form .field-holder textarea::-moz-placeholder { opacity: 1; }
-.signup-form .field-holder input[type="text"]:-ms-input-placeholder, .user-holder .field-holder textarea:-ms-input-placeholder { opacity: 1; }
 .signup-form .field-holder img { border: none; border-radius: 0; -webkit-box-shadow: none; box-shadow: none; margin: 0; padding: 0; }
 .signup-form .field-holder textarea { height: 102px; padding-top: 10px; }
 .signup-form { width: 540px; margin: 0 auto 40px auto; background: #fff; padding: 15px 20px 20px; }
@@ -1206,7 +1188,6 @@ input[type="checkbox"].onoffswitch-checkbox { display: none; }
 .page-not-found .cs-text p { color: #555; font-size: 16px; padding-top: 10px; }
 .page-not-found form .input-holder { position: relative; }
 .page-not-found form i { color: #555; font-weight: 700; left: 10px; position: absolute; top: 11px; }
-.page-not-found form input[type="text"] { border-color: #ccc; color: #333; font-size: 13px; height: 36px; padding: 0 100px 0 30px; line-height: 36px; }
 .page-not-found form input[type="submit"] { border: none; color: #fff; border-radius: 0 4px 4px 0; font-size: 13px; height: 36px; padding: 0 18px; position: absolute; right: 0; text-transform: uppercase; top: 0; }
 /*404 Page Style End*/
 .no-results .suggestions ul { margin: 0px 0 20px 0; padding: 0px; }
@@ -1273,7 +1254,6 @@ input[type="checkbox"].onoffswitch-checkbox { display: none; }
 .cs-spreator.modern_new .cs-seprater { background-color: inherit; margin-top: 0; height: auto; margin-bottom: 5px; }
 .center .cs-spreator.modern_new .cs-seprater:after { display: none; }
 .cs-construction .input-holder { width: 456px; display: inline-block; margin-bottom: 30px; }
-.cs-construction .input-holder input[type="text"] { color: #808080; font-size: 13px; text-transform: uppercase; height: 42px; }
 .cs-construction .input-holder { position: relative; }
 .cs-construction .input-holder input[type="submit"] { position: absolute; right: 0; top: 0; border: none; padding: 0 12px; color: #fff; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; line-height: 41px; border-radius: 0; }
 .cs-construction .input-holder i { position: absolute; left: 14px; top: 12px; font-size: 18px; color: #c9c9c9; }
@@ -1962,20 +1942,8 @@ textarea#comment_mes { display: none; }
   background-color: #218838;
 }
 
-/* Estilos para los campos de entrada de texto */
-.main-search.fancy .field-holder input[type="text"] {
-  color: #000000 !important;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: border-color 0.3s ease;
-}
 
-.main-search.fancy .field-holder input[type="text"]:focus {
-  border-color: #007bff;
-}
+
 
 /* Estilos para la tabla */
 table td, table th {

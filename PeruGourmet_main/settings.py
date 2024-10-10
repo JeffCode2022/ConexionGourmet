@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'accounts.context_processors.get_vendor',
+                'accounts.context_processors.get_google_api',
 
             ],
         },
@@ -155,3 +156,5 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'PeruGourmet Marketplace <jchungadev@gmail.com>'
+
+GOOGLE_API_KEY = 'AIzaSyDAzVCOcIM6TnI6Ta9PBagD7f-POP3-wZ8'
