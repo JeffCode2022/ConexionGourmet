@@ -2008,7 +2008,7 @@ textarea#comment_mes { display: none; }
 
 /* Diseño de la sección de botones de categoría */
 .user-holder .float-right {
-  display: flex;
+  
   justify-content: flex-end;
   gap: 15px;
 }

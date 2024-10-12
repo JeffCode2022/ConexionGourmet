@@ -519,152 +519,23 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="listing fancy fancy-simple">
 								<ul class="row">
+									
+									{% for vendor in vendors %}
 									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post ">
+										<div class="list-post featured">
 											<div class="img-holder">
 												<figure>
-													<a href="#"><img src="{%static 'extra-images/listing-logo03.png'%} " alt=""></a>
-												</figure>
-											</div>
-											<span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span>
-											<div class="text-holder">
-												<div class="post-title">
-													<h5><a href="#">Nature Healthy Food</a></h5>
-												</div>
-												<address>Apple Juice, Beef Roast, Cheese Burger</address>
-												<div class="delivery-potions">
-													<div class="post-time"><i class="icon-check_circle"></i>Min £15.00
-													</div>
-													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
-													<div class="post-time"><i class="icon-clock4"></i>15 min</div>
-													<div class="list-rating">
-														<div class="rating-star">
-															<span class="rating-box" style="width: 100%;"></span>
-														</div>
-														<span class="reviews">(1)</span>
-													</div>
-													<span>Bristol</span>
-												</div>
-											</div>
-											<div class="list-option">
-												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
-											</div>
-										</div>
-									</li>
-									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post ">
-											<div class="img-holder">
-												<figure>
-													<a href="#"><img src="{%static 'extra-images/listing-logo09.png'%} " alt=""> </a>
+													{% if vendor.user_profile.profile_picture %}
+													<a href="#"><img src="{{ vendor.user_profile.profile_picture.url }}" height="125" class="attachment-full size-full wp-post-image" alt=""></a>
+													{% else %}
+													<a href="#"><img src="{% static 'images/default-profile.png' %}" height="125" class="attachment-full size-full wp-post-image" alt=""></a>
+													{% endif %}
 												</figure>
 											</div>
 											<span class="restaurant-status open"><em class="bookmarkRibbon"></em>Open</span>
 											<div class="text-holder">
 												<div class="post-title">
-													<h5><a href="#">Menu &amp; Drinks</a></h5>
-												</div>
-												<address>Chicken Roast, Chines Soup, Cold Coffee</address>
-												<div class="delivery-potions">
-													<div class="post-time"><i class="icon-check_circle"></i>Min £10.00
-													</div>
-													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
-													<div class="post-time"><i class="icon-clock4"></i>15 min</div>
-													<span>Acle</span>
-												</div>
-											</div>
-											<div class="list-option">
-												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
-											</div>
-										</div>
-									</li>
-									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post featured">
-											<div class="img-holder">
-												<figure>
-													<a href="#"><img src="{%static 'extra-images/listing-logo12.png'%} " alt=""></a>
-												</figure>
-											</div>
-											<span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span>
-											<div class="text-holder">
-												<div class="post-title">
-													<h5><a href="@">Chefs</a> <span class="sponsored text-color">Sponsored</span></h5>
-												</div>
-												<address>Egg Fry, Noodles, Pastry</address>
-												<div class="delivery-potions">
-													<div class="post-time"><i class="icon-check_circle"></i>Min £10.00
-													</div>
-													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
-													<div class="post-time"><i class="icon-clock4"></i>15 min </div>
-													<span>Chester</span>
-												</div>
-											</div>
-											<div class="list-option">
-												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
-											</div>
-										</div>
-									</li>
-									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post featured">
-											<div class="img-holder">
-												<figure>
-													<a href="#"> <img src="{%static 'extra-images/listing-logo15.png'%} " alt=""></a>
-												</figure>
-											</div>
-											<span class="restaurant-status open"><em class="bookmarkRibbon"></em>Open</span>
-											<div class="text-holder">
-												<div class="post-title">
-													<h5><a href="#">Menu’s</a><span class="sponsored text-color">Sponsored</span></h5>
-												</div>
-												<address>Fish Fry, Fresh Juice, Stakes</address>
-												<div class="delivery-potions">
-													<div class="post-time"><i class="icon-check_circle"></i>Min £15.00
-													</div>
-													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
-													<div class="post-time"><i class="icon-clock4"></i>15 min </div>
-													<span>Aspatria</span>
-												</div>
-											</div>
-											<div class="list-option">
-												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
-											</div>
-										</div>
-									</li>
-									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post ">
-											<div class="img-holder">
-												<figure>
-													<a href="#"><img src="{%static 'extra-images/2.png'%} " alt=""> </a>
-												</figure>
-											</div>
-											<span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span>
-											<div class="text-holder">
-												<div class="post-title">
-													<h5><a href="#">Food N&amp;H</a></h5>
-												</div>
-												<address>Beef Roast, Cheese Burger, Doughnut</address>
-												<div class="delivery-potions">
-													<div class="post-time"><i class="icon-check_circle"></i>Min £20.00
-													</div>
-													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
-													<div class="post-time"><i class="icon-clock4"></i>15 min</div>
-													<span>Bridport</span>
-												</div>
-											</div>
-											<div class="list-option"><a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i> </a>
-											</div>
-										</div>
-									</li>
-									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-										<div class="list-post featured">
-											<div class="img-holder">
-												<figure>
-													<a href="#"><img src="{%static 'extra-images/listing-logo13.png'%} " alt=""></a>
-												</figure>
-											</div>
-											<span class="restaurant-status open"><em class="bookmarkRibbon"></em>Open</span>
-											<div class="text-holder">
-												<div class="post-title">
-													<h5><a href="#">Restaurant</a>
+													<h5><a href="#">{{vendor.vendor_name}}</a>
 														<span class="sponsored text-color">Sponsored</span>
 													</h5>
 												</div>
@@ -681,7 +552,9 @@
 												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
 											</div>
 										</div>
-									</li>
+									 </li>
+
+									{% endfor %}
 								</ul>
 							</div>
 						</div>
