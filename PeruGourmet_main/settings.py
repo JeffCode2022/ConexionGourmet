@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'PeruGourmet_main', # Add this line
     'accounts', # Add this line
-    'vendor'
+    'vendor',
+    'menu',
 ]
 
 MIDDLEWARE = [

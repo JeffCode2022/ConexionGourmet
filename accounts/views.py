@@ -97,7 +97,8 @@ def registerVendor(request):
             user.save()
             vendor = v_form.save(commit=False)
             vendor.user = user
-            user_profile = UserProfile.objects.get(user=user)
+            
+            user_profile = User.objects.get(user=user)
             vendor.user_profile = user_profile
             vendor.save()
 

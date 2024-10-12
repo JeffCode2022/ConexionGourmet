@@ -130,15 +130,7 @@ textarea { height: 175px; }
 .field-holder textarea:focus:-moz-placeholder { color: transparent; }
 .field-holder textarea:focus::-moz-placeholder { color: transparent; }
 .field-holder textarea:focus:-ms-input-placeholder { color: transparent; }
-/* Table typo style */
-table { background-color: transparent; margin-bottom: 15px; width: 100%; border-collapse: collapse; border-spacing: 0; }
-th { text-align: left; }
-table > tbody + tbody { border-top: 2px solid #d2d2d2; }
-table > thead > tr > th { border-bottom: 2px solid #d2d2d2; vertical-align: bottom; }
-table > thead > tr > th, table > tbody > tr > th, table > tfoot > tr > th, table > thead > tr > td, table > tbody > tr > td, table > tfoot > tr > td { border-top: 1px solid #d2d2d2; border: 1px solid #d2d2d2; line-height: 2.5; padding-left: 7px; vertical-align: top; text-align: center; padding: 12px 16px; }
-.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td { border-top: 1px solid #d2d2d2; }
-table > caption + thead > tr:first-child > th, table > colgroup + thead > tr:first-child > th, table > thead:first-child > tr:first-child > th, table > caption + thead > tr:first-child > td, table > colgroup + thead > tr:first-child > td, table > thead:first-child > tr:first-child > td { border-bottom: 0; }
-/* Table typo style End */
+
 /* Rich Editor Style */
 .rich_editor_text h1, .rich_editor_text h2, .rich_editor_text h3, .rich_editor_text h4, .rich_editor_text h5, .rich_editor_text h6 { margin-bottom: 10px; }
 .rich_editor_text p, .rich_editor_text ul, .rich_editor_text ol { margin-bottom: 10px; }
@@ -314,8 +306,6 @@ header#header { position: relative; z-index: 99; }
 /* active state, i.e. menu open End*/
 .slicknav_menu .slicknav_no-text { margin: 0; }
 .slicknav_menu .slicknav_icon-bar { display: none; width: 1.125em; height: 2px; font-size: 19px; background: #FFF; }
-.slicknav_menu:before { content: " "; display: table; }
-.slicknav_menu:after { content: " "; display: table; clear: both; }
 .slicknav_nav { clear: both; max-height: -webkit-calc(100vh - 162px); max-height: -moz-calc(100vh - 162px); max-height: calc(100vh - 162px); }
 .slicknav_nav ul { display: block; }
 .slicknav_nav li { display: block; margin-bottom: 0px; }
@@ -849,7 +839,6 @@ a.slicknav_btn.slicknav_open .slicknav_icon-bar:first-child { position: absolute
 .comments .cs-message label { display: block; }
 .comment-navigation { padding: 0 15px; }
 .comment-navigation .nav-links { margin-bottom: 15px; }
-.comment-navigation .nav-links:after { content: ''; display: table; clear: both; line-height: 0; }
 .comment-navigation .nav-links .nav-previous { display: inline-block; margin-right: 10px; }
 .comment-navigation .nav-links .nav-next { display: inline-block; }
 .comment-navigation .nav-linksa { color: #c33332; }
@@ -1294,7 +1283,6 @@ section.no-results.not-found { padding: 30px; }
 ::i-block-chrome, .field-holder textarea, ::i-block-chrome, .field-holder input.field-input[type=date], ::i-block-chrome, .field-holder input[type=datetime], ::i-block-chrome, .field-holder input[type=datetime-local], ::i-block-chrome, .field-holder input[type=email], ::i-block-chrome, .field-holder input[type=month], ::i-block-chrome, .field-holder input[type=number], ::i-block-chrome, .field-holder input[type=password], ::i-block-chrome, .field-holder input[type=range], ::i-block-chrome, .field-holder input[type=search], ::i-block-chrome, .field-holder input[type=tel], ::i-block-chrome, .field-holder input[type=text], ::i-block-chrome, .field-holder input[type=time], ::i-block-chrome, .field-holder input[type=url], ::i-block-chrome, .field-holder input[type=week] { line-height: normal !important; }
 ::i-block-chrome, textarea { padding-top: 15px !important; line-height: normal !important; }
 .activation-tab-message { text-align: center; margin-top: 70px; }
-.activation-tab-message:after { content: ''; display: table; line-height: 0; clear: both; }
 .activation-tab-message .text-holder strong { color: #31cd75; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 45px; display: block; margin-bottom: 15px; }
 .activation-tab-message .text-holder span { color: #999999; display: block; font-size: 16px; font-family: 'Montserrat', sans-serif; }
 .activation-tab-message .media-holder { margin-bottom: 25px; }
@@ -1404,12 +1392,7 @@ section.no-results.not-found { padding: 30px; }
 /*Site Maps Links Style End*/
 .cs-map-section, .image-frame.fancy { margin-bottom: 25px; }
 .button_style { margin-bottom: 20px; }
-/*Table Style Start*/
-.cs-pricing-table .table { margin-bottom: 30px; }
-.cs-pricing-table .table thead tr th, .cs-pricing-table .table tbody tr td { text-align: left; }
-.cs-pricing-table .table thead tr th { font-size: 14px; color: #000; font-weight: 700; background-color: #fff; padding: 12px 15px; }
-.cs-pricing-table .table tbody tr td { font-size: 14px; color: #999; font-weight: 400; background-color: #fff; padding: 10px 12px; }
-/*Table Style End*/
+
 .testimonial { margin-bottom: 30px; }
 /*Team Grid Style Start*/
 .team.team-grid { margin-bottom: 30px; }
@@ -1559,48 +1542,8 @@ section.no-results.not-found { padding: 30px; }
 .progress-info small { position: absolute; right: 10px; z-index: 1; font-size: 12px; color: #999; line-height: 21px; }
 .progress-info .progress-bar { -webkit-box-shadow: none; box-shadow: none; -webkit-transition: none; -moz-transition: none; transition: none; }
 /*Progress Info Style End*/
-/*Price Table Style Start*/
-.pricetable-holder.center { text-align: center; }
-.pricetable-holder { font-family: "Open Sans", sans-serif; margin-bottom: 30px; background-color: #fff; -webkit-box-shadow: 0 0 3px rgba(160, 160, 160, 0.62); box-shadow: 0 0 3px rgba(160, 160, 160, 0.62); position: relative; overflow: hidden; padding-bottom: 30px; }
-.pricetable-holder.active { -webkit-transform: scale(1.03); -moz-transform: scale(1.03); -ms-transform: scale(1.03); transform: scale(1.03); margin: 7px auto 0 auto; -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2); box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2); width: -webkit-calc(100% - 10px); width: -moz-calc(100% - 10px); width: calc(100% - 10px); }
-.pricetable-holder .cs-price { border: 0; position: relative; min-width: 75%; display: inline-block; margin: auto; background-color: #333333; border-radius: 0 0 40% 40%; margin-bottom: 40px; }
-.pricetable-holder.active .cs-price { background-color: #c33332; }
-.pricetable-holder .cs-price h2 { font: 700 Normal 21px/22px "Open Sans", sans-serif !important; padding: 35px 15px 20px 15px; position: relative; z-index: 1; color: #fff !important; margin-bottom: 0; }
-.pricetable-holder .cs-price > span { font-size: 50px; line-height: 35px; color: #fff; position: relative; padding-bottom: 25px; margin-bottom: 0; }
-.pricetable-holder .cs-price > span small { font-size: 20px; font-weight: 400; vertical-align: sub; line-height: 18px; top: -13px; position: relative; display: inline-block; }
-.pricetable-holder .cs-price > span em { font-size: 14px; font-weight: 400; margin-left: -10px; padding-left: 0; text-transform: capitalize; font-style: normal; }
-.pricetable-holder p { font-size: 16px; color: #333333; font-weight: 600; margin-bottom: 20px; }
-.pricetable-holder ul { margin-bottom: 34px; }
-.pricetable-holder ul li { list-style: none; padding: 10px; }
-.pricetable-holder ul li, .pricetable-holder ul li strong { color: #9698a0; font-weight: 300; font-size: 14px; }
-.pricetable-holder ul li:nth-child(even) { background: #fbfbfb; }
-.pricetable-holder .cs-price:before { content: ''; border-radius: 0 0 50% 50%; display: block; width: 100%; height: 100%; position: absolute; left: 0; right: 0; top: 10px; margin: auto; background-color: inherit; z-index: 0; }
-.pricetable-holder .foodbakery-subscribe-pkg-btn, .pricetable-holder .foodbakery-subscribe-pkg { font-family: "Open Sans", sans-serif; font-weight: 600; display: inline-block; background: #c33332; font-size: 12px; text-transform: uppercase; padding: 9px 36px; color: #fff; border: 0; border-radius: 30px; line-height: 18px; }
-.pricetable-holder .foodbakery-subscribe-pkg-btn i, .pricetable-holder .foodbakery-subscribe-pkg i { display: inline-block; }
-.pricetable-holder .foodbakery-subscribe-pkg-btn input[type="submit"], .pricetable-holder .foodbakery-subscribe-pkg input[type="submit"] { border: 0; background: transparent; }
-.pricetable-holder .foodbakery-subscribe-pkg-btn .pricetable-holder .foodbakery-subscribe-pkg i { vertical-align: middle; }
-.pricetable-holder .category { display: inline-block; height: 16px; left: -24px; line-height: 12px; position: absolute; top: 22px; -webkit-transform: rotate(-50deg); -moz-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); width: 100px; background-color: #000; }
-.pricetable-holder .category em { color: #fff; font-size: 10px; font-style: normal; font-weight: bold; letter-spacing: 1px; line-height: 14px; text-transform: uppercase; }
-.pricetable-holder p, .pricetable-holder span { font-size: 14px; color: #999; padding: 0 30px; margin-bottom: 15px; display: block; }
-.pricetable-holder .button-holder { display: block; }
-.pricetable-holder .button-holder a { display: inline-block; text-align: center; padding: 0 20px; height: 40px; line-height: 40px; font-size: 16px; font-weight: 400; outline: none; text-decoration: none; }
-.pricetable-holder .button-holder a i { display: inline-block; margin: -1px 0 0 0; vertical-align: middle; }
-.advance .pricetable-holder { padding-bottom: 38px; }
-.advance .pricetable-holder.active { padding-bottom: 30px; }
-.advance .pricetable-holder .cs-price { background-color: transparent !important; width: 100%; margin-bottom: 20px; }
-.advance .pricetable-holder .cs-price > span { font-size: 48px; color: #333333; background: none !important; border-bottom: 1px solid #dfe1e7; font-weight: 700; position: relative; }
-.advance .pricetable-holder .cs-price > span strong { font-size: 16px; display: block; text-transform: uppercase; }
-.advance .pricetable-holder .cs-price > span small { font-weight: 300; margin-right: 5px; }
-.advance .pricetable-holder .cs-price > span em { font-weight: 300; }
-.advance .pricetable-holder .cs-price > span:after { content: ''; display: block; height: 1px; background: #dfe1e7; position: absolute; bottom: 0; }
-.advance .pricetable-holder.active { -webkit-box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.29); box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.29); border: 4px solid #c33332; -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); margin-top: 0; }
-.advance .pricetable-holder .cs-price h2 { color: #333333 !important; padding: 28px 15px 13px 15px; text-transform: uppercase !important; letter-spacing: 0 !important; }
-.advance .pricetable-holder ul li:nth-child(even) { background: transparent; }
-.advance .pricetable-holder ul li { color: #666666; }
-.advance .pricetable-holder ul li { padding: 5px; }
-.advance .foodbakery-subscribe-pkg { background: transparent; font-family: "Open Sans", sans-serif; font-weight: 400; display: inline-block; font-size: 14px; text-transform: uppercase; line-height: 18px; border: 1px solid #e1e1e1; color: #666; border-radius: 2px; padding: 11px 46px; }
-.advance .pricetable-holder.active .foodbakery-subscribe-pkg { background: #c33332; color: #fff; }
-/*Price Table Style End*/
+
+
 /*Cs Icon List Style Start*/
 .cs-icon-list { padding: 0px; margin: 0px 0 30px 0; }
 .cs-icon-list li { list-style: none; padding: 0px; margin: 0px 0 10px; border: none; font-size: 14px; color: #999; font-weight: 500; line-height: 20px; margin-bottom: 15px; }
@@ -1945,16 +1888,7 @@ textarea#comment_mes { display: none; }
 
 
 
-/* Estilos para la tabla */
-table td, table th {
-  padding: 12px;
-  line-height: 1.5 !important;
-  border: none !important;
-}
 
-table > tbody > tr > td {
-  border: none !important;
-}
 
 /* Estilos para select */
 #opening_hours select {
@@ -1989,7 +1923,7 @@ table > tbody > tr > td {
       margin-top: 15px !important;
       margin-left: 0 !important;
   }
-  
+}
   .main-search-bar {
       padding-top: 100px !important;
       padding-bottom: 50px !important;
@@ -2010,16 +1944,41 @@ table > tbody > tr > td {
       margin-top: -30px !important;
   }
 
-  .table.opening_hours {
-      width: 100% !important;
-  }
-
-  .table td {
-      padding: 0.75rem !important;
-  }
+  .table-custom {
+    border-collapse: collapse;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
-/* Accesibilidad para tablas */
-table td, table th {
-  line-height: 1.2rem !important;
+.table-custom th,
+.table-custom td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #34495e;
+}
+
+.table-custom thead {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.table-custom tbody tr:hover {
+    background-color: #34495e;
+}
+
+.table-custom th {
+    text-transform: uppercase;
+}
+
+.table-custom th:first-child,
+.table-custom td:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+.table-custom th:last-child,
+.table-custom td:last-child {
+    border-radius: 0 8px 8px 0;
 }
