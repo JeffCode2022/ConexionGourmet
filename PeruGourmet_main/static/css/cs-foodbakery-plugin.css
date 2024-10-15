@@ -1,4 +1,4 @@
-.main-header .login-option { float: right; text-align: right; }
+.main-header .login-option { float: right; text-align: right; margin-top: 20px}
 .main-header .login-option a { outline: none; text-decoration: none; }
 .main-header .login-option a.login-popup { color: #333; font-size: 13px; font-weight: 700; margin: 0 0 0 15px; text-transform: uppercase; display: inline-block; margin-top: 22px; }
 .main-header .login-option a.get-start-btn { background-color: #c33332; border-radius: 3px; color: #fff; font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0; line-height: normal; padding: 10px 15px; text-transform: uppercase; margin: 0 0 0 12px; }

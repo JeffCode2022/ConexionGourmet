@@ -10,7 +10,7 @@
 						<div class="logo">
 							<figure>
 								<a href="{% url 'home'%}" class="light-logo">
-									<img src="{% static 'extra-images/logo.png'%}" alt="FoodBakery">
+									<img src="{% static 'extra-images/logo-conexion.png'%}" alt="CONEXIONGOURMET" style="width: 100%;">
 								</a>
 							
 							</figure>
@@ -18,40 +18,19 @@
 						<div class="main-nav">
 							<nav id="site-navigation" class="main-navigation">
 								<ul>
-									<li>
-										<a href="#">Demos</a>
-										<ul>
-											<li><a href="index.html">Food Bakery</a></li>
-											<li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
-											<li><a href="foodstop.html">Food Stop</a></li>
-											<li><a href="rtl.html">Rtl Demo</a></li>
-											<li><a href="food-cout.html">Food Court</a></li>
-											<li><a href="single-restaurant.html">Single Restaurant Demo</a></li>
-										</ul>
-										<!--End Sub Menu -->
+									
+									
+									<li class="menu-item-has-children">
+										<a href="{% url 'home'%}">Home</a>
 									</li>
-									<li><a href="listings.html">Restaurants</a></li>
-									<li>
-										<a href="#">Pages</a>
-										<ul>
-											<li><a href="price-plans.html">Price Plans</a></li>
-											<li><a href="how-it-works.html">How it works</a></li>
-											<li><a href="faq.html">FAQ’s</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="search-result.html">Search Result</a></li>
-											<li><a href="contact-us.html">Contact</a></li>
-										</ul>
-										<!--End Sub Menu -->
+									<li class="menu-item-has-children">
+										<a href="{% url 'vendor'%}">Restaurants</a>
 									</li>
-									<li>
-										<a href="#">Blogs</a>
-										<ul>
-											<li><a href="blog-large.html">Blog Large</a></li>
-											<li><a href="blog-medium.html">Blog Medium</a></li>
-											<li><a href="blog-masonry.html">Blog Masonry</a></li>
-											<li><a href="blog-detail.html">Blog Detail Page</a></li>
-										</ul>
-										<!--End Sub Menu -->
+									<li class="menu-item-has-children">
+										<a href="">About</a>
+									</li>
+									<li class="menu-item-has-children">
+										<a href="">Contact</a>
 									</li>
 								</ul>
 							</nav><!-- .main-navigation -->
@@ -72,20 +51,23 @@
 						
 				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 					<div class="login-option">
+						
+						<a href="{% url 'marketplace'%}" class="btn btn-outline-danger text-uppercase font-weight-bold" style="color: aliceblue">Marketplace</a>
+					
 						{% if user.is_authenticated %}
 						Hola, {{ user.username }}
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'myAccount' %}">My account</a> 
-						<a class="cs-color cs-popup-joinus-btn login-popup text-danger" href="{% url 'logout' %}">Logout</a>
+						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'myAccount' %}" style="color: aliceblue;">My account</a> 
+						<a class="cs-color cs-popup-joinus-btn login-popup text-danger" href="{% url 'logout' %}" style="color: aliceblue;">Logout</a>
 
 
 						{% else %}
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'login' %}">
+						<a class="cs-color cs-popup-joinus-btn login-popup " href="{% url 'login' %} " style="color: aliceblue;">
 							Login
 						</a>
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'registerUser' %}">
+						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'registerUser' %}" style="color: aliceblue;">
 							Register
 						</a>
-						<a class="get-start-btn" href="{% url 'registerVendor'%}">
+						<a class="get-start-btn" href="{% url 'registerVendor'%}" style="color: aliceblue;">
 							Register
 							Restaurant </a>
 						{% endif%}
@@ -102,12 +84,12 @@
     background-color: #eb6825; /* Naranja */
     position: static; /* Asegúrate de que el encabezado no sea sticky */
     width: 100%;
-    padding: 10px 0; /* Espaciado superior e inferior */
+    padding: 4px 0; /* Espaciado superior e inferior */
     z-index: 1000; /* Mantener el encabezado encima de otros elementos */
 }
 
 .static-header .logo img {
-    max-height: 50px; /* Ajusta la altura del logo */
+    max-height: 90px; /* Ajusta la altura del logo */
 }
 
 
