@@ -19,4 +19,6 @@ urlpatterns = [
       path('menu-builder/food/edit/<int:pk>/', views.edit_food, name='edit_food'),
       path('menu-builder/food/delete/<int:pk>/', views.delete_food, name='delete_food'),
 
+      
+
 ]

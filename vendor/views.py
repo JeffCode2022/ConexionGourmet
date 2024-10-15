@@ -194,3 +194,5 @@ def delete_food(request, pk=None):
     return redirect('fooditems_by_category', food.category.id)
 
 
+
+
