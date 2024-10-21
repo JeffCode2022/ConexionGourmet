@@ -5,4 +5,7 @@ urlpatterns = [
     path('', views.marketplace, name='marketplace'),
     path('slug/<slug:vendor_slug>/', views.vendor_detail, name='vendor_detail'),
 
+    path('<slug:vendor_slug>/', views.vendor_detail, name='vendor_detail'),
+
+
 ]
