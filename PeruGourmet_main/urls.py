@@ -11,6 +11,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
 
     path('marketplace/', include('marketplace.urls')),
-    path( 'card/', include('Card.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
