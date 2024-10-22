@@ -6761,3 +6761,6 @@ button.close {
   }
 }
 
+.d-none{
+  display: none !important;
+}

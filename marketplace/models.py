@@ -7,7 +7,7 @@ from menu.models import FoodItem
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     fooditem = models.ForeignKey(FoodItem, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(default=1)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
