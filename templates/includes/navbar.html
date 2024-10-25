@@ -1,116 +1,224 @@
-{% load static %}	
-<!-- Main Wrapper -->
-<div class="wrapper">
-	<!-- Header Start -->
-	<header id="header" class="static-header">
-		<div class="main-header">
-			<div class="wide">
-				<div class="row">
-					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-						<div class="logo">
-							<figure>
-								<a href="{% url 'home'%}" class="light-logo">
-									<img src="{% static 'extra-images/logo.png'%}" alt="FoodBakery">
-								</a>
-							
-							</figure>
-						</div>
-						<div class="main-nav">
-							<nav id="site-navigation" class="main-navigation">
-								<ul>
-									<li>
-										<a href="#">Demos</a>
-										<ul>
-											<li><a href="index.html">Food Bakery</a></li>
-											<li><a href="mexican-restaurant.html">Mexican Restaurant</a></li>
-											<li><a href="foodstop.html">Food Stop</a></li>
-											<li><a href="rtl.html">Rtl Demo</a></li>
-											<li><a href="food-cout.html">Food Court</a></li>
-											<li><a href="single-restaurant.html">Single Restaurant Demo</a></li>
-										</ul>
-										<!--End Sub Menu -->
-									</li>
-									<li><a href="listings.html">Restaurants</a></li>
-									<li>
-										<a href="#">Pages</a>
-										<ul>
-											<li><a href="price-plans.html">Price Plans</a></li>
-											<li><a href="how-it-works.html">How it works</a></li>
-											<li><a href="faq.html">FAQ’s</a></li>
-											<li><a href="404.html">404</a></li>
-											<li><a href="search-result.html">Search Result</a></li>
-											<li><a href="contact-us.html">Contact</a></li>
-										</ul>
-										<!--End Sub Menu -->
-									</li>
-									<li>
-										<a href="#">Blogs</a>
-										<ul>
-											<li><a href="blog-large.html">Blog Large</a></li>
-											<li><a href="blog-medium.html">Blog Medium</a></li>
-											<li><a href="blog-masonry.html">Blog Masonry</a></li>
-											<li><a href="blog-detail.html">Blog Detail Page</a></li>
-										</ul>
-										<!--End Sub Menu -->
-									</li>
-								</ul>
-							</nav><!-- .main-navigation -->
-						</div>
-					
-					<div class="main-location">
-						<ul>
-							<li class="location-has-children choose-location">
-								<form action="#">
-									<input type="text" value="" name="location" placeholder="Enter your delivery location" autocomplete="off">
-									<span id="foodbakery_radius_location_open" class="foodbakery-radius-location"><i class="icon-target5"></i></span>
-								</form>
-								
-							</li>
-						</ul>
-						</div>
-				</div>
-						
-				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-					<div class="login-option">
-						{% if user.is_authenticated %}
-						Hola, {{ user.username }}
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'myAccount' %}">My account</a> 
-						<a class="cs-color cs-popup-joinus-btn login-popup text-danger" href="{% url 'logout' %}">Logout</a>
+{% load static %}
 
+<!-- New Navbar Wrapper -->
+<div class="new-navbar-wrapper">
+    <!-- Navbar Start -->
+    <header id="new-navbar-header" class="new-navbar-static-header">
+        <div class="new-navbar-main-header">
+            <div class="new-navbar-container">
+                <div class="new-navbar-row">
+                    <!-- Logo Section -->
+                    <div class="new-navbar-logo">
+                        <a href="{% url 'home' %}" class="new-logo-link">
+                            <img src="{% static 'extra-images/logo-conexion.png' %}" alt="CONEXIONGOURMET" class="new-navbar-logo-img">
+                        </a>
+                    </div>
 
-						{% else %}
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'login' %}">
-							Login
-						</a>
-						<a class="cs-color cs-popup-joinus-btn login-popup" href="{% url 'registerUser' %}">
-							Register
-						</a>
-						<a class="get-start-btn" href="{% url 'registerVendor'%}">
-							Register
-							Restaurant </a>
-						{% endif%}
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Header End -->
+                    <!-- Search/Location Section -->
+                    <div class="new-navbar-location">
+                        <form action="#" class="new-navbar-location-form">
+                            <input type="text" name="location" placeholder="Enter your delivery location" autocomplete="off" class="new-navbar-location-input">
+                            <button type="submit" class="new-navbar-location-btn">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                 
+
+                    <!-- Login & Marketplace Section -->
+                    <div class="new-navbar-options">
+
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'cart'%}">
+                            <i class="fa fa-shopping-cart text-danger" style="font-size: 20px;"></i>
+                            <span class="badge badge-warning" id="cart_counter" style="border-radius: 50px; position: relative; bottom:10px; left: -5px;">{{ cart_count }}</span>
+                        </a>
+                        {% endif %}
+
+                        <a href="{% url 'marketplace' %}" class="new-navbar-marketplace">
+                            <i class="fas fa-store"></i> Marketplace
+                        </a>
+                        {% if user.is_authenticated %}
+                        <span class="new-navbar-user">Hola, {{ user.username }}</span>
+                        <a href="{% url 'myAccount' %}" class="new-navbar-account">
+                            <i class="fas fa-user-circle"></i> My Account
+                        </a>
+                        <a href="{% url 'logout' %}" class="new-navbar-logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="new-navbar-login">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                        <a href="{% url 'registerUser' %}" class="new-navbar-register">
+                            <i class="fas fa-user-plus"></i> Register
+                        </a>
+                        <a href="{% url 'registerVendor' %}" class="new-navbar-register-restaurant">
+                            <i class="fas fa-utensils"></i> Register Restaurant
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 </div>
+
+<!-- CSS for New Navbar -->
 <style>
-	/* Estilos generales para el encabezado */
-.static-header {
-    background-color: #eb6825; /* Naranja */
-    position: static; /* Asegúrate de que el encabezado no sea sticky */
+/* General Navbar Styles */
+.new-navbar-wrapper {
     width: 100%;
-    padding: 10px 0; /* Espaciado superior e inferior */
-    z-index: 1000; /* Mantener el encabezado encima de otros elementos */
+    background-color: #eb6825; /* Naranja */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.static-header .logo img {
-    max-height: 50px; /* Ajusta la altura del logo */
+.new-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    max-width: 100%; /* Ahora ocupa el 100% */
+    margin: 0;
 }
 
+.new-navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
+/* Logo Section */
+.new-navbar-logo {
+    flex: 1;
+}
 
+.new-navbar-logo-img {
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
 
+.new-navbar-logo-img:hover {
+    transform: scale(1.1); /* Efecto zoom al pasar por el logo */
+}
+
+/* Location Section */
+.new-navbar-location {
+    flex: 2;
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.new-navbar-location-form {
+    display: flex;
+    justify-content: flex-start; /* Alinear el formulario a la izquierda */
+    align-items: center;
+    position: relative;
+}
+
+.new-navbar-location-input {
+    width: 60%; /* Ajusta el tamaño del input */
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.new-navbar-location-input:focus {
+    border-color: #333;
+}
+
+.new-navbar-location-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #eb6825;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.new-navbar-location-btn:hover {
+    color: #333;
+}
+
+/* Options Section */
+.new-navbar-options {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
+}
+
+.new-navbar-options a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.new-navbar-options a:hover {
+    background-color: #fff;
+    color: #eb6825;
+}
+
+/* Specific Options Styling */
+.new-navbar-marketplace {
+    display: flex;
+    align-items: center;
+}
+
+.new-navbar-user {
+    color: #fff;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.new-navbar-account, .new-navbar-login, .new-navbar-logout, .new-navbar-register, .new-navbar-register-restaurant {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.new-navbar-account:hover i, .new-navbar-login:hover i, .new-navbar-logout:hover i, .new-navbar-register:hover i, .new-navbar-register-restaurant:hover i {
+    transform: scale(1.2); /* Efecto de agrandamiento de iconos */
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .new-navbar-container {
+        flex-direction: column;
+    }
+
+    .new-navbar-logo {
+        margin-bottom: 15px;
+    }
+
+    .new-navbar-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .new-navbar-location {
+        margin-bottom: 15px;
+    }
+
+    .new-navbar-location-input {
+        width: 100%;
+    }
+}
 </style>
+
+<!-- FontAwesome CDN for Icons (Add this to your HTML header) -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

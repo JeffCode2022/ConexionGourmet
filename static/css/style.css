@@ -1863,13 +1863,13 @@ textarea#comment_mes { display: none; }
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #17a2b8;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -1944,40 +1944,151 @@ textarea#comment_mes { display: none; }
       margin-top: -30px !important;
   }
 
-  .table-custom {
-    border-collapse: collapse;
-    background-color: #2c3e50;
-    color: #ecf0f1;
+  .menu-itam-holder .quantity input {
+      width: 50px !important;
+  }
+
+  /* Ajustes generales para un look más moderno */
+  .main-section {
+    background-color: #f4f4f4;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    border-radius: 8px;
+  }
+
+/* Títulos principales */
+.user-holder h5 {
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 1.5px;
 }
 
-.table-custom th,
+/* Estilo para botones principales */
+.btn {
+  border-radius: 50px;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-success:hover, .btn-info:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de la tabla */
+.table-custom {
+  background-color: #212529;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .table-custom td {
-    padding: 15px;
+  vertical-align: middle;
+}
+
+.table-custom td i {
+  color: #17a2b8;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.table-custom td i:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
+
+/* Ajustes de la barra lateral */
+.v_sidebar {
+  background-color: #343a40;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Diseño de la sección de botones de categoría */
+.user-holder .float-right {
+  
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Efecto de transición en las filas de la tabla */
+.table-custom tr:hover {
+  background-color: #495057;
+  transition: background-color 0.3s ease;
+}
+
+.table-custom td a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.table-custom td a:hover {
+  color: #17a2b8;
+}
+
+/* Media Queries para mejorar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .user-holder .float-right {
+      flex-direction: column;
+  }
+}
+
+   /* General container for the dashboard */
+   .user-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for the cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Individual card styling */
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #34495e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.table-custom thead {
-    background-color: #1abc9c;
-    color: #fff;
+.dashboard-card:hover {
+    transform: translateY(-5px);
 }
 
-.table-custom tbody tr:hover {
-    background-color: #34495e;
+.dashboard-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.table-custom th {
-    text-transform: uppercase;
+.dashboard-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eb6825;
 }
 
-.table-custom th:first-child,
-.table-custom td:first-child {
-    border-radius: 8px 0 0 8px;
+/* Chart container styling */
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+<<<<<<< HEAD
 .table-custom th:last-child,
 .table-custom td:last-child {
     border-radius: 0 8px 8px 0;
@@ -1989,3 +2100,99 @@ textarea#comment_mes { display: none; }
   justify-content: flex-end;
   gap: 15px;
 }
+=======
+.chart-container h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.chart {
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Bar chart individual bars */
+.chart-bar {
+    width: 8%;
+    background-color: #eb6825;
+    border-radius: 3px 3px 0 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.chart-bar:hover {
+    background-color: #333;
+}
+
+/* Recent activity container */
+.recent-activity {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recent-activity h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Activity item styling */
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/* Activity icon styling */
+.activity-icon {
+    background-color: #eb6825;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.activity-icon i {
+    color: white;
+}
+
+/* Activity details styling */
+.activity-details h4 {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.activity-details p {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* One column on small screens */
+    }
+    
+    .chart {
+        height: 150px;
+    }
+}
+>>>>>>> 3fcb23c8fb89586217ef8f603d9fbd39bc074ff0

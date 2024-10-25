@@ -86,12 +86,9 @@ table td, table th{
     line-height: 1rem !important;
 }
 
-.d-none{
-    display: none !important;
-  }
 
-     /* General container for the dashboard */
-.user-holder {
+   /* General container for the dashboard */
+   .user-holder {
     display: flex;
     flex-direction: column;
     gap: 20px;

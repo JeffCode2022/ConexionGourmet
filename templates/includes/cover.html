@@ -1,5 +1,5 @@
 {% load static %}
-<div class="page-section restaurant-detail-image-section" style=" background: url({{ vendor.user_profile.cover_photo.url }} ) no-repeat scroll 0 0 / cover;">
+<div class="page-section restaurant-detail-image-section" style=" background: url({% if vendor.user_profile.cover_photo %} {{ vendor.user_profile.cover_photo.url }} {% else %} {% static 'images/default-profile.png' %}{% endif %}) no-repeat scroll 0 0 / cover;">
     <div class="container">
         <!-- Row Start -->
         <div class="row">
