@@ -1982,3 +1982,10 @@ textarea#comment_mes { display: none; }
 .table-custom td:last-child {
     border-radius: 0 8px 8px 0;
 }
+
+/* Diseño de la sección de botones de categoría */
+.user-holder .float-right {
+  /* display: flex; */
+  justify-content: flex-end;
+  gap: 15px;
+}
