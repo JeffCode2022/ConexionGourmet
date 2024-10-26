@@ -56,7 +56,11 @@
                                                                     <li class="gal-img">
                                                                         <div class="drag-list">
                                                                             <div class="item-thumb">
+                                                                                {% if profile.cover_photo %}
                                                                                 <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover Photo">
+                                                                                {% else %}
+                                                                                <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Cover Photo">
+                                                                                {% endif %}
                                                                             </div>
                                                                         </div>
                                                                     </li>
@@ -157,7 +161,7 @@
                                         <div>
                                             <div class="field-holder">
                                                 <div class="payment-holder input-button-loader">
-                                                    <input type="submit" value="Actualizar Restaurante" >
+                                                    <input type="submit" value="Update Restaurant" >
                                                 </div>
                                             </div>
                                         </div>

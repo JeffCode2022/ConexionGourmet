@@ -6,7 +6,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Peru Gourmet </title>
+	<title>Peru Gourmet</title>
+
 	<!-- Google Font Family Link Start -->
 	<!-- Your custom CSS -->
 	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
@@ -16,93 +17,110 @@
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
 	<!-- Google Font Family Link End -->
-	<!-- Bootstrap Link Start-->
+
+	<!-- Bootstrap Link Start -->
 	<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
 	<link href="{% static 'css/bootstrap-theme.css'%}" rel="stylesheet">
-	<link href="{% static 'css/bootstrap-datepicker.css'%} rel="stylesheet">
-	<link href="{% static 'css/bootstrap-slider.css'%} " rel="stylesheet">
-	<!-- Bootstrap Link End-->
-	<!-- Iconmoon Link Start-->
-	<link href="{% static 'css/iconmoon.css'%} " rel="stylesheet">
-	<!-- Iconmoon Link End-->
+	<link href="{% static 'css/bootstrap-datepicker.css'%}" rel="stylesheet">
+	<link href="{% static 'css/bootstrap-slider.css'%}" rel="stylesheet">
+	<!-- Bootstrap Link End -->
+
+	<!-- Iconmoon Link Start -->
+	<link href="{% static 'css/iconmoon.css'%}" rel="stylesheet">
+	<!-- Iconmoon Link End -->
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!-- Animate Link Start-->
-	<link href="{% static 'css/animate.css'%} " rel="stylesheet">
-	<!-- Animate Link End-->
-	<!-- Chosen Link Start-->
-	<link href="{% static 'css/chosen.css'%} " rel="stylesheet">
-	<!-- Chosen Link End-->
-	<!-- Swiper Link Start-->
+
+	<!-- Animate Link Start -->
+	<link href="{% static 'css/animate.css'%}" rel="stylesheet">
+	<!-- Animate Link End -->
+
+	<!-- Chosen Link Start -->
+	<link href="{% static 'css/chosen.css'%}" rel="stylesheet">
+	<!-- Chosen Link End -->
+
+	<!-- Swiper Link Start -->
 	<link href="{% static 'css/swiper.css'%}" rel="stylesheet">
-	<!-- Swiper Link End-->
-	<!-- Woocommerce Link Start-->
+	<!-- Swiper Link End -->
+
+	<!-- Woocommerce Link Start -->
 	<link href="{% static 'css/woocommerce.css'%}" rel="stylesheet">
-	<!-- Woocommerce Link End-->
-	<!-- Pretty Photo Link Start-->
-	<link href="{% static 'css/prettyPhoto.css'%} " rel="stylesheet">
-	<!-- Pretty Photo Link End-->
-	<!-- Jquery UI Link Start-->
-	<link href="{% static 'css/jquery-ui.css'%} " rel="stylesheet">
-	<!-- Jquery UI Link End-->
-	<!-- Themes / plugin Link Start-->
-	<link href="{% static 'css/style.css'%} " rel="stylesheet">
-	<link href="{% static 'css/cs-foodbakery-plugin.css'%} " rel="stylesheet">
-	<link href="{% static 'css/color-mexican-restaurant.css'%} " rel="stylesheet">
-	<link href="{% static 'css/widget.css'%} " rel="stylesheet">
-	<link href="{% static 'css/responsive.css'%} " rel="stylesheet">
-	<link href="{% static 'css/rtl.css'%} " rel="stylesheet">
+	<!-- Woocommerce Link End -->
+
+	<!-- Pretty Photo Link Start -->
+	<link href="{% static 'css/prettyPhoto.css'%}" rel="stylesheet">
+	<!-- Pretty Photo Link End -->
+
+	<!-- Jquery UI Link Start -->
+	<link href="{% static 'css/jquery-ui.css'%}" rel="stylesheet">
+	<!-- Jquery UI Link End -->
+
+	<!-- Themes / plugin Link Start -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="{% static 'css/style.css'%}" rel="stylesheet">
+	<link href="{% static 'css/cs-foodbakery-plugin.css'%}" rel="stylesheet">
+	<link href="{% static 'css/color-mexican-restaurant.css'%}" rel="stylesheet">
+	<link href="{% static 'css/widget.css'%}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+	<link href="{% static 'css/rtl.css'%}" rel="stylesheet">
+	<!-- Themes / plugin Link End -->
+
+	<!-- Google Maps API -->
 	
 	<script src="https://maps.googleapis.com/maps/api/js?key={{GOOGLE_API_KEY}}&libraries=places&callback=initAutoComplete" defer></script>
-	<script src="{% static 'js/custom.js'%}"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
-	<!-- Themes / plugin Link End-->
+	<!-- Load jQuery before custom.js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="{% static 'js/modernizr.js'%} "></script>
-	<script src="{% static 'js/bootstrap.js'%} "></script>
+
+	<!-- SweetAlert2 CDN -->
+	<script src="{% static 'js/custom.js' %}"></script>
+
+	<!-- Modernizr -->
+	<script src="{% static 'js/modernizr.js' %}"></script>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
+    <![endif]-->
 </head>
 
 <body>
 
-    <!-- load navbar here -->
-     {% include 'includes/navbar.html' %}
-    <!-- load contect here-->
-    {% block content %}
+    <!-- Navbar -->
+    {% include 'includes/navbar.html' %}
 
+    <!-- Main content -->
+    {% block content %}
     {% endblock %}
 
-    <!-- load footer here-->
+	<!-- Botón de Subir -->
+	 {% include 'includes/up.html' %}
+
+    <!-- Footer -->
     {% include 'includes/footer.html' %}
 
+    <!-- Other scripts -->
+	<script src="{% static 'js/responsive.menu.js' %}"></script>
+	<script src="{% static 'js/swiper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+	<script src="{% static 'js/chosen.js' %}"></script>
+	<script src="{% static 'js/counter.js' %}"></script>
+	<script src="{% static 'js/fliters.js' %}"></script>
+	<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+	<script src="{% static 'js/jquery.growl.js' %}"></script>
+	<script src="{% static 'js/jquery.matchHeight-min.js' %}"></script>
+	<script src="{% static 'js/masonry.pkgd.js' %}"></script>
+	<script src="{% static 'js/skills-progress.js' %}"></script>
+	<script src="{% static 'js/bootstrap-slider.js' %}"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/theia-sticky-sidebar.js' %}"></script>
+	<script src="{% static 'js/functions-plugin.js' %}"></script>
+	<script src="{% static 'js/functions.js' %}"></script>
 
-
-	
-	</div>
-
-	<script src="{% static 'js/responsive.menu.js'%} "></script>
-	<script src="{% static 'js/swiper.min.js'%} "></script>
-	<script src="{% static 'js/bootstrap-datepicker.js'%}"></script>
-	<script src="{% static 'js/chosen.js'%} "></script>
-	<script src="{% static 'js/counter.js'%} "></script>
-	<script src="{% static 'js/fliters.js'%} "></script>
-	<script src="{% static 'js/jquery.fitvids.js'%} "></script>
-	<script src="{% static 'js/jquery.growl.js'%} "></script>
-	<script src="{% static 'js/jquery.matchHeight-min.js'%} "></script>
-	<script src="{% static 'js/masonry.pkgd.js'%} "></script>
-	<script src="{% static 'js/skills-progress.js'%} "></script>
-	<script src="{% static 'js/bootstrap-slider.js'%} "></script>
-	<script src="{% static 'js/wow.js'%} "></script>
-	<script src="{% static 'js/jquery-ui.js'%} "></script>
-	<script src="{% static 'js/theia-sticky-sidebar.js'%} "></script>
-	<script src="{% static 'js/functions-plugin.js'%} "></script>
-	<script src="{% static 'js/functions.js'%} "></script>
 </body>
-
 </html>
