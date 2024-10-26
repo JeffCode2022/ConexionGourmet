@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config # type: ignore
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -160,3 +162,8 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'PeruGourmet Marketplace <jchungadev@gmail.com>'
 
 GOOGLE_API_KEY = 'AIzaSyDAzVCOcIM6TnI6Ta9PBagD7f-POP3-wZ8'
+
+
+# os.environ['PATH'] = os.path.join(BASE_DIR, 'envLibsite-packagesosgeo') + ';' + os.environ['PATH']
+# os.environ['PROJ_LIB'] = os.path.join(BASE_DIR, 'envLibsite-packagesosgeodataproj') + ';' + os.environ['PATH']
+# GDAL_LIBRARY_PATH = os.path.join(BASE_DIR, 'envLibsite-packagesosgeogdal.dll')
