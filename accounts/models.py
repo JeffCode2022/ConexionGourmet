@@ -1,6 +1,9 @@
+
 from django.db import models 
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager 
 from django.db.models.fields.related import OneToOneField 
+from django.contrib.gis.db import models as gismodels
+from django.contrib.gis.geos import Point
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -89,7 +92,7 @@ class User(AbstractBaseUser):
 
 
 class UserProfile(models.Model):
-    user = OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     profile_picture = models.ImageField(upload_to='users/profile_pictures', null=True, blank=True)
     cover_photo = models.ImageField(upload_to='users/cover_photos', null=True, blank=True)
     address = models.CharField(max_length=250, null=True, blank=True)
@@ -99,13 +102,21 @@ class UserProfile(models.Model):
     zip_code = models.CharField(max_length=6, null=True, blank=True)
     longitude = models.CharField(max_length=20, null=True, blank=True)
     latitude = models.CharField(max_length=20, null=True, blank=True)
+    location = gismodels.PointField(null=True, blank=True, srid=4326)
     created_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
 
-    # def full_address(self):
-    #     return f'{self.address_line_1}, {self.address_line_2}'
-
     def __str__(self):
         return self.user.email
-    
 
+    def save(self, *args, **kwargs):
+        if self.latitude and self.longitude:
+            try:
+                # Verifica si latitud y longitud son numéricos antes de convertirlos
+                lat = float(self.latitude)
+                lon = float(self.longitude)
+                self.location = Point(lon, lat)  # Asegúrate de que el orden sea correcto: (lon, lat)
+            except ValueError:
+                # Si la conversión falla, evita guardar un punto incorrecto
+                self.location = None
+        super(UserProfile, self).save(*args, **kwargs)
