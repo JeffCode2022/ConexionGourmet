@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'includes/alerts.html' %}
+
+<!-- Inicio de la Sección Principal -->
+<div class="main-section">
+    {% include 'includes/cover.html' %}
+    <div class="page-section account-header buyer-logged-in">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <!-- Cargar la barra lateral aquí -->
+                    {% include 'includes/v_sidebar.html' %}
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="user-dashboard loader-holder">
+                        <div class="user-holder">
+                            <h5 class="text-uppercase">Construye Tu Menú de Comidas</h5>
+                            <hr>
+                            <button class="btn btn-secondary" onclick="history.back()"><i class="fa fa-angle-left" aria-hidden="true"></i> Regresar</button>
+                            <br><br>
+                            <h6>Modificar Elemento de Comida</h6>
+                            <form action="{% url 'edit_food' food.id %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-fields-set">
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>Título de Comida *</label>
+                                                {{ form.food_title }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>Categoría *</label>
+                                                {{ form.category }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>Descripción</label>
+                                                {{ form.description }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>Precio *</label>
+                                                {{ form.price }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>Imagen</label>
+                                                {{ form.image }}
+                                                
+                                                <img src="{{ food.image.url }}" alt="Imagen de Comida" width="100" class="mt-2">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="field-holder">
+                                                <label>¿Está Disponible?</label>
+                                                {{ form.is_available }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% for field in form %}
+                                    {% if field.errors %}
+                                        {% for error in field.errors %}
+                                            <li style="color: red;">{{ error }}</li>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+
+                                <button type="submit" class="btn btn-info"><i class="fa fa-check" aria-hidden="true"></i> Actualizar</button>
+                                <a href="{% url 'delete_food' food.id %}" onclick="return confirm('¿Estás seguro de que deseas eliminar este elemento de comida?')" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Eliminar</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin de la Sección Principal -->
+{% endblock %}
