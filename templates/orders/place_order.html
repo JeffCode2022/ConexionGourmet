@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<!-- Sección Principal Inicio -->
+<div class="main-section pt-5">
+    <div class="page-section">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="tabs-holder horizontal">
+                        <ul class="stickynav-tabs nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-shopping-cart text-danger"></i>Revisar Dirección de Facturación</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane in active">
+                                <div class="menu-itam-holder">
+                                    <div id="menu-item-list-6272" class="menu-itam-list">
+                                        <div class="billing-address">
+                                            <div><b>{{ order.name }}</b></div>
+                                            <div>{{ order.address }}</div>
+                                            <div>{{ order.city }} - {{ order.pin_code }}</div>
+                                            <div>{{ order.state }}, {{ order.country }}</div>
+                                            <div><b>Teléfono: </b>{{ order.phone }}</div>
+                                            <div><b>Email: </b>{{ order.email }}</div>
+                                            <div><b>Pago: </b>{{ order.payment_method }}</div>
+                                            <br>
+                                            <div><a href="{% url 'checkout' %}" class="btn btn-outline-danger">Editar</a></div>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección del Pedido -->
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="tabs-holder horizontal">
+                        <ul class="stickynav-tabs nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="#home"><i class="icon- icon-room_service"></i>Tu Pedido</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="home" class="tab-pane in active">
+                                <div class="menu-itam-holder">
+                                    <div>
+                                        <table class="table">
+                                            <tbody>
+                                                {% for item in cart_items %}
+                                                <tr>
+                                                    <td><img src="{{ item.fooditem.image.url }}" width="40" alt="Imagen de Comida"></td>
+                                                    <td><b>{{ item.fooditem }}</b></td>
+                                                    <td>{{ item.quantity }}</td>
+                                                    <td>${{ item.fooditem.price }}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+
+                                        <ul>
+                                            <li style="list-style-type: none;">
+                                                Subtotal
+                                                <span class="price float-right">
+                                                    <span class="currency">$</span>
+                                                    <span id="subtotal">{{ subtotal }}</span>
+                                                </span>
+                                            </li>
+
+                                            {% for key, value in tax_dict.items %}
+                                                {% for i, j in value.items %}
+                                                    <li style="list-style-type: none;">
+                                                        {{ key }} <small>({{ i }}%)</small>
+                                                        <span class="price float-right">
+                                                            <span class="currency">$</span>
+                                                            <span id="tax-{{ key }}">{{ j }}</span>
+                                                        </span>
+                                                    </li>
+                                                {% endfor %}
+                                            {% endfor %}
+
+                                            <li style="list-style-type: none; font-weight: 600;">
+                                                TOTAL
+                                                <span class="price float-right">
+                                                    <span class="currency">$</span>
+                                                    <span id="total">{{ grand_total }}</span>
+                                                </span>
+                                            </li>
+
+                                            {% if order.payment_method == 'PayPal' %}
+                                            <!-- Botón de Pago PayPal -->
+                                            <div id="paypal-button-container"></div>
+                                            {% elif order.payment_method == 'RazorPay' %}
+                                            <div id="rzp_payment_button">
+                                                <button class="btn btn-danger w-100 p-2" id="rzp-button1">Pagar con RazorPay</button>
+                                                <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                                            </div>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sección Principal Fin -->
+<script>
+    // Función para obtener el valor de una cookie específica
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    // Define el tipo de cambio de soles a dólares (debería actualizarse dinámicamente)
+    const exchangeRate = 3.80; // 1 USD = 3.80 soles, por ejemplo
+
+    // Convierte el grand_total de soles a dólares
+    var grand_total_soles = "{{ grand_total }}";
+    var grand_total_usd = (grand_total_soles / exchangeRate).toFixed(2); // redondea a dos decimales
+
+    var url = "{% url 'payments' %}";
+    var order_number = "{{ order.order_number }}";
+    const csrftoken = getCookie('csrftoken');
+    var order_complete = "{% url 'order_complete' %}";
+
+    // Configuración de PayPal
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: grand_total_usd // Usa el total en USD
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(orderData) {
+                console.log(orderData);
+                var transaction = orderData.purchase_units[0].payments.captures[0];
+                var transaction_id = transaction.id;
+                var status = orderData.status;
+                var payment_method = 'PayPal';
+                sendTransaction(transaction_id, payment_method, status);
+                document.getElementById('paypal-button-container').innerHTML = '<h4 class="text-center"><i class="fa fa-spinner fa-spin"></i> Por favor espera...</h4>';
+            });
+        }
+    }).render('#paypal-button-container');
+
+    // Configuración de Razorpay
+    var options = {
+        "key": "{{ RZP_KEY_ID }}",
+        "amount": "{{ rzp_amount }}",
+        "currency": "INR",
+        "name": "FoodOnline",
+        "description": "FoodOnline - Mercado de Restaurantes",
+        "image": "{% static 'logo/foodOnlineLogo.png' %}",
+        "order_id": "{{ rzp_order_id }}",
+        "handler": function (response) {
+            document.getElementById('rzp_payment_button').innerHTML = '<h4 class="text-center"><i class="fa fa-spinner fa-spin"></i> Por favor espera...</h4>';
+            var transaction_id = response.razorpay_payment_id;
+            var payment_method = 'RazorPay';
+            var status = 'Success';
+            sendTransaction(transaction_id, payment_method, status);
+        },
+        "prefill": {
+            "name": "{{ order.name }}",
+            "email": "{{ order.email }}",
+            "contact": "{{ order.phone }}"
+        },
+        "notes": {
+            "address": "{{ order.address }}"
+        },
+        "theme": {
+            "color": "#dc3545"
+        }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response){
+        alert("Error en el pago. Por favor, intenta de nuevo.");
+    });
+    document.getElementById('rzp-button1').onclick = function(e){
+        rzp1.open();
+        e.preventDefault();
+    };
+
+    // Función para enviar los detalles de la transacción al backend
+    function sendTransaction(transaction_id, payment_method, status){
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {
+                'order_number': order_number,
+                'transaction_id': transaction_id,
+                'payment_method': payment_method,
+                'status': status,
+                'csrfmiddlewaretoken': csrftoken
+            },
+            success: function(response){
+                window.location.href = order_complete + '?order_no=' + response.order_number + '&trans_id=' + response.transaction_id;
+            }
+        });
+    }
+</script>
+
+{% endblock %}

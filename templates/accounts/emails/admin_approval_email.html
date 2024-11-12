@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Hola {{user.first_name}},
+
+{% if is_approved %}
+¡Felicidades! Tu restaurante ha sido aprobado por nuestro equipo de administración. --ConexionGourmet
+{% else %}
+Lo sentimos mucho. No cumples con los requisitos para publicar tu menú de alimentos en nuestro mercado. Para más detalles, por favor contacta a ConexionGourmet@ConexionGourmet.com. --ConexionGourmet
+{% endif %}
+
+{% endautoescape %}

@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'includes/alerts.html' %}
+
+<!-- Inicio de la Sección Principal -->
+<div class="main-section">
+    {% include 'includes/cover.html' %}
+    <div class="page-section account-header buyer-logged-in">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <!-- Cargar la barra lateral aquí -->
+                    {% include 'includes/v_sidebar.html' %}
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="user-dashboard loader-holder">
+                        <div class="user-holder">
+                            <h5 class="text-uppercase">Administra Tu Restaurante</h5>
+                            <!-- Inicio del Formulario de Mi Restaurante -->
+                            <form action="{% url 'vprofile' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-fields-set">
+                                    <ul>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="restaurant-info">
+                                                        <div class="img-holder">
+                                                            <ul class="foodbakery-gallery-holder">
+                                                                <li class="gal-img">
+                                                                    <div class="drag-list">
+                                                                        <div class="item-thumb">
+                                                                            {% if profile.profile_picture %}
+                                                                            <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Foto de Perfil">
+                                                                            {% else %}
+                                                                            <img class="thumbnail" src="{% static 'images/default-profile.png' %}" alt="Foto de Perfil">
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="text-holder">
+                                                            <label>Actualizar Foto de Perfil</label>
+                                                            <div class="upload-gallery">
+                                                                {{profile_form.profile_picture}}
+                                                            </div>
+                                                        </div>
+                                                        <label class="text-danger">{{ profile_form.profile_picture.errors }}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="restaurant-info">
+                                                        <div class="img-holder">
+                                                            <ul class="foodbakery-gallery-holder">
+                                                                <li class="gal-img">
+                                                                    <div class="drag-list">
+                                                                        <div class="item-thumb">
+                                                                            {% if profile.cover_photo %}
+                                                                            <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Foto de Portada">
+                                                                            {% else %}
+                                                                            <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Foto de Portada">
+                                                                            {% endif %}
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="text-holder">
+                                                            <label>Actualizar Foto de Portada</label>
+                                                            <div class="upload-gallery">
+                                                                {{profile_form.cover_photo}}
+                                                            </div>
+                                                        </div>
+                                                        <label class="text-danger">{{ profile_form.cover_photo.errors }}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="restaurant-info">
+                                                        <div class="img-holder">
+                                                            <ul class="foodbakery-gallery-holder">
+                                                                <li class="gal-img">
+                                                                    <div class="drag-list">
+                                                                        <div class="item-thumb">
+                                                                            <img class="thumbnail" src="{{vendor.vendor_license.url}}" alt="Licencia del Restaurante">
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="text-holder">
+                                                            <label>Actualizar Licencia</label>
+                                                            <div class="upload-gallery">
+                                                                {{vendor_form.vendor_license}}
+                                                            </div>
+                                                        </div>
+                                                        <label class="text-danger">{{ vendor_form.vendor_license.errors }}</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Nombre del Restaurante *</label>
+                                                        {{vendor_form.vendor_name}}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Dirección *</label>
+                                                        {{profile_form.address}}
+                                                        <small class="text-muted float-right">con tecnología de Google</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>País *</label>
+                                                        {{profile_form.country}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Estado *</label>
+                                                        {{profile_form.state}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Ciudad *</label>
+                                                        {{profile_form.city}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Código Postal *</label>
+                                                        {{profile_form.pin_code}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Latitud *</label>
+                                                        {{profile_form.latitude}}
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                                    <div class="field-holder">
+                                                        <label>Longitud *</label>
+                                                        {{profile_form.longitude}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div>
+                                        <div class="field-holder">
+                                            <div class="payment-holder input-button-loader">
+                                                <input type="submit" value="Actualizar Restaurante">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Fin del Formulario de Mi Restaurante -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin de la Sección Principal -->
+{% endblock %}

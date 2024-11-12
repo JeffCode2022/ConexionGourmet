@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Main Section Start -->
+    <div class="main-section" style="background-color: #f5f5f5; padding: 60px 0;">
+        <div class="page-section nopadding cs-nomargin">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="user-dashboard loader-holder" style="background-color: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 40px;">
+                            <div class="user-holder">
+                                <h1 class="text-center" style="margin-bottom: 20px; font-size: 32px; color: #333;"><strong>ASOCIARSE CON CONEXIÓN-GOURMET</strong></h1>
+                                <p class="text-center" style="font-size: 18px; color: #777;">Por favor, registre su restaurante en <strong>CONEXIÓN-GOURMET</strong> y obtenga más clientes.</p>
+                                <hr style="border-color: #ddd;">
+                                <div id="restaurant-sets-holder">
+                                    <form id="registration-form" class="form-fields-set foodbakery-dev-restaurant-form" method="post" action="{% url 'registerVendor' %}" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <ul class="register-add-restaurant-tab-container restaurant-information-tab-container" style="list-style-type: none; padding: 0;">
+                                            <!-- Display form errors -->
+                                            {% if form.non_field_errors %}
+                                                <div class="form-errors" style="color: red; text-align: center;">
+                                                    {% for error in form.non_field_errors %}
+                                                        <p>{{ error }}</p>
+                                                    {% endfor %}
+                                                </div>
+                                            {% endif %}
+
+                                            <li>
+                                                <div class="row">
+                                                    <ul style="list-style-type: none; padding: 0; width: 100%;">
+                                                        <li>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Nombre</label>
+                                                                    {{ form.first_name }}
+                                                                    {% if form.first_name.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.first_name.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Apellido</label>
+                                                                    {{ form.last_name }}
+                                                                    {% if form.last_name.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.last_name.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Nombre del Restaurante</label>
+                                                                    {{ v_form.vendor_name }}
+                                                                    {% if v_form.vendor_name.errors %}
+                                                                        <div class="error" style="color: red;">{{ v_form.vendor_name.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Licencia de restaurante</label>
+                                                                    {{ v_form.vendor_license }}
+                                                                    {% if v_form.vendor_license.errors %}
+                                                                        <div class="error" style="color: red;">{{ v_form.vendor_license.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Correo Electrónico</label>
+                                                                    {{ form.email }}
+                                                                    {% if form.email.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.email.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Nombre de Usuario</label>
+                                                                    {{ form.username }}
+                                                                    {% if form.username.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.username.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Contraseña</label>
+                                                                    {{ form.password }}
+                                                                    {% if form.password.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.password.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="field-holder" style="margin-bottom: 20px;">
+                                                                    <label style="font-weight: bold;">Confirmar Contraseña</label>
+                                                                    {{ form.confirm_password }}
+                                                                    {% if form.confirm_password.errors %}
+                                                                        <div class="error" style="color: red;">{{ form.confirm_password.errors }}</div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-lg-12 text-center">
+                                                        <div class="field-holder" style="margin-top: 20px;">
+                                                            <input type="submit" value="REGISTRARSE" id="btn-next-restaurant-information" class="bgcolor" 
+                                                            style="background-color: #a03825; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 18px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        {% include 'includes/alerts.html'%}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Main Section End -->
+    </div>
+            
+{% endblock %}
+
+<script>
+    function clearForm() {
+        document.getElementById('registration-form').reset();
+    }
+
+    // Add hover effect to submit button
+    document.querySelector('#btn-next-restaurant-information').addEventListener('mouseover', function() {
+        this.style.backgroundColor = '#872e1c';
+    });
+    document.querySelector('#btn-next-restaurant-information').addEventListener('mouseout', function() {
+        this.style.backgroundColor = '#a03825';
+    });
+</script>

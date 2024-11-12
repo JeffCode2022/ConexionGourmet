@@ -1,0 +1,232 @@
+{% load static %}
+
+<!-- Contenedor del nuevo Navbar -->
+<div class="navbar-wrapper">
+    <!-- Inicio del Navbar -->
+    <header id="navbar-header" class="navbar-static-header">
+        <div class="navbar-main-header">
+            <div class="navbar-container">
+                <div class="navbar-row">
+                    <!-- Sección del Logo -->
+                    <div class="navbar-logo">
+                        <a href="{% url 'home' %}" class="logo-link">
+                            <img src="{% static 'extra-images/logo-conexion.png' %}" alt="CONEXIONGOURMET" class="navbar-logo-img">
+                        </a>
+                    </div>
+
+                    <!-- Sección de Búsqueda/Ubicación -->
+                    <div class="navbar-location">
+                        <form action="#">
+                            <input type="text" name="location" id="location" placeholder="Tu ubicación actual" autocomplete="off" class="location-input">
+                            <span class="location-icon" onclick="getLocation()"><i class="icon-target5"></i></span>
+                        </form>
+                    </div>
+
+                    <!-- Sección de Login y Marketplace -->
+                    <div class="navbar-options">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'cart' %}">
+                            <i class="fa fa-shopping-cart text-danger" style="font-size: 20px;"></i>
+                            <span class="badge badge-warning" id="cart_counter" style="border-radius: 50px; position: relative; bottom:10px; left: -5px;">{{ cart_count }}</span>
+                        </a>
+                        {% endif %}
+
+                        <a href="{% url 'marketplace' %}" class="navbar-marketplace">
+                            <i class="fas fa-store"></i> Marketplace
+                        </a>
+
+                        {% if user.is_authenticated %}
+                        <span class="navbar-user">Hola, {{ user.username }}</span>
+                        <a href="{% url 'myAccount' %}" class="navbar-account">
+                            <i class="fas fa-user-circle"></i> Mi Cuenta
+                        </a>
+                        <a href="{% url 'logout' %}" class="navbar-logout">
+                            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                        </a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="navbar-login">
+                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                        </a>
+                        <a href="{% url 'registerUser' %}" class="navbar-register">
+                            <i class="fas fa-user-plus"></i> Registrarse
+                        </a>
+                        <a href="{% url 'registerVendor' %}" class="navbar-register-restaurant">
+                            <i class="fas fa-utensils"></i> Registrar Restaurante
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<!-- CSS para el nuevo Navbar -->
+<style>
+/* Estilos Generales del Navbar */
+.navbar-wrapper {
+    width: 100%;
+    background-color: #eb6825;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+.navbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Sección del Logo */
+.navbar-logo {
+    flex: 1;
+}
+
+.navbar-logo-img {
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+    transform: scale(1.1); /* Efecto zoom en el logo */
+}
+
+/* Sección de Ubicación */
+.navbar-location {
+    flex: 2;
+    position: relative;
+}
+
+.location-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.location-input:focus {
+    border-color: #333;
+}
+
+.location-icon {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #eb6825;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.location-icon:hover {
+    color: #333;
+}
+
+/* Sección de Opciones */
+.navbar-options {
+    flex: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar-options a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-options a:hover {
+    background-color: #fff;
+    color: #eb6825;
+}
+
+/* Estilos Específicos */
+.navbar-marketplace,
+.navbar-account,
+.navbar-login,
+.navbar-logout,
+.navbar-register,
+.navbar-register-restaurant {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar-account:hover i,
+.navbar-login:hover i,
+.navbar-logout:hover i,
+.navbar-register:hover i,
+.navbar-register-restaurant:hover i {
+    transform: scale(1.2); /* Efecto de agrandamiento de iconos */
+    transition: transform 0.3s ease;
+}
+
+/* Responsive para Móvil */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+    }
+
+    .navbar-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+
+<!-- Script de FontAwesome para los Iconos -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Script de Geolocalización -->
+<script>
+    const locationInput = document.getElementById("location");
+    const savedLocation = sessionStorage.getItem("current_location");
+    if (savedLocation) {
+        locationInput.value = savedLocation;
+    }
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            locationInput.value = "Geolocalización no soportada por este navegador.";
+        }
+    }
+
+    function showPosition(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        const GOOGLE_API_KEY = "{{ GOOGLE_API_KEY }}";
+        const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOOGLE_API_KEY}`;
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            success: function(response) {
+                const currentLocation = response.results[0].formatted_address;
+                locationInput.value = currentLocation;
+                sessionStorage.setItem("current_location", currentLocation);
+                window.location = `?lat=${lat}&lng=${lng}`;
+            }
+        });
+    }
+</script>

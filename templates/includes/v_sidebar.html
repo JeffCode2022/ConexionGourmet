@@ -1,0 +1,23 @@
+<div class="user-account-nav user-account-sidebar">
+    <div class="user-nav-list">
+        <ul>
+            <li class="{% if '/vendorDashboard/' == request.path or '/vendor/' == request.path %}active{% endif %}">
+                <a href="{% url 'vendorDashboard' %}"><i class="icon-dashboard3"></i>Panel de Control</a>
+            </li>
+            <li class="{% if 'profile' in request.path %}active{% endif %}">
+                <a href="{% url 'vprofile' %}"><i class="icon-building"></i>Mi Restaurante</a>
+            </li>
+            <li class="{% if 'menu-builder' in request.path %}active{% endif %}">
+                <a href="{% url 'menu_builder' %}"><i class="icon-menu5"></i>Constructor de Menú</a>
+            </li>
+            <li class="{% if 'opening-hour' in request.path %}active{% endif %}">
+                <a href="{% url 'opening_hours' %}"><i class="icon-menu5"></i>Horario de Apertura</a>
+            </li>
+            <li class="{% if '/my_orders/' in request.path %}active{% endif %}">
+                <a href="{% url 'vendor_my_orders' %}"><i class="icon-add_shopping_cart"></i>Pedidos</a>
+            </li>
+            <!-- <li><a href="restaurant-earnings.html"><i class="icon-money"></i>Ganancias</a></li> -->
+            <li><a class="logout-btn" href="{% url 'logout' %}"><i class="icon-log-out"></i>Cerrar Sesión</a></li>
+        </ul>
+    </div>
+</div>

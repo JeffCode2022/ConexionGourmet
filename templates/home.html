@@ -1,0 +1,400 @@
+{% extends 'base.html'%}	
+{% load static %}
+
+{% block content %}
+
+    <!-- Main Section Start -->
+		<div class="main-section ">
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 250px;padding-bottom: 250px;margin-bottom: 0px;background: url({%static 'extra-images/home-top-1.jpg'%}) no-repeat center / cover;">
+				<div class="container">
+					<div class="row">
+						<div class="section-fullwidth col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="column-content ">
+										<b style="font-size: 50px; text-transform: uppercase; line-height: 60px; text-align: center; display: block; margin-bottom: 30px; letter-spacing: 6px; color: rgb(255, 255, 255);">
+											COMIDA RÁPIDA ORGÁNICA<br>FÁCIL Y SALUDABLE</b>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="main-search fancy modern">
+										<form  action="{% url 'search' %}" method="GET">
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+													<div class="field-holder">
+														<i class="icon-search"></i>
+														<input type="text" name="keyword"  placeholder="Nombre del Restaurant o menu">
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+													<div class="field-holder">
+														<ul>
+															<li class="select-location">
+																<div class="foodbakery-locations-fields-group foodbakery-focus-out">
+																	<span class="foodbakery-search-location-icon"><i class="icon-location"></i></span>
+																	<input type="text" name="address" class="location-field-text filter" id="id_address" required placeholder="All Locations">
+																	<input type="hidden" name="lat" value="" id="id_latitude">
+																	<input type="hidden" name="lng" value="" id="id_longitude">
+																</div>
+																
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+													<select name="radius" id="radius" style=" height: 50px;" required>
+														<option value="" selected>Radio de busqueda</option>
+														<option value="5">5km</option>
+														<option value="10">10km</option>
+														<option value="15">15km</option>
+														<option value="25">25km</option>
+														<option value="50">50km</option>
+														<option value="75">75km</option>
+														<option value="100">100km</option>
+													</select>
+
+
+												</div>
+												<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+													<div class="field-holder">
+														<input class="bgcolor" type="submit" value="search" placeholder="BUSCAR">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="main-post">
+										<div class="media-holder center">
+											<figure><img alt="" src="{%static 'extra-images/options-img.png'%}">
+											</figure>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 40px;padding-bottom: 40px;margin-bottom: 0px;background: #eb6825;">
+				<!-- Container Start -->
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<div class="counter-sec">
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-xs-4 ">
+										<div class="counter-holder">
+											<div class="text-holder">
+												<i class="icon- icon-check-circle" style="color:#ffffff !important"></i>
+												<strong class="count" style="color:#ffffff !important">18</strong>
+												<span style="color:#ffffff !important">Restaurant</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-4 ">
+										<div class="counter-holder">
+											<div class="text-holder">
+												<i class="icon- icon-check-circle" style="color:#ffffff !important"></i>
+												<strong class="count" style="color:#ffffff !important">9</strong>
+												<span style="color:#ffffff !important">People Served</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-xs-4 ">
+										<div class="counter-holder">
+											<div class="text-holder">
+												<i class="icon- icon-check-circle" style="color:#ffffff !important"></i>
+												<strong class="count" style="color:#ffffff !important">49</strong>
+												<span style="color:#ffffff !important">Registered Users</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- End Container Start -->
+			</div>
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 80px;padding-bottom: 0px;margin-bottom: 0px;background: #ffffff;">
+				<!-- Container Start -->
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cs-section-title" style="text-align:center!important;">
+								<h2>CÓMO FUNCIONA</h2>
+								<span style="color:#aaaaaa;">Cuando los ciudadanos educados se involucran en la financiación de la disuasión.</span>
+							</div>
+						</div>
+						<div class="cs-icon-boxes-listtop-center">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="icon-boxes modern top-center">
+										<div class="img-holder">
+											<figure>
+												<a href="#"><img src="{% static 'extra-images/how-to-work2.png'%}" alt=""></a>
+											</figure>
+										</div>
+										<div class="text-holder">
+											<h3><a href="#">Elige un restaurante</a></h3>
+											<p>Cras vitae dictum velit. Duis at purus enim. Cras massa massa, maximus
+												sit amet
+												finibus quis, pharetra eu erat.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="icon-boxes modern top-center">
+										<div class="img-holder">
+											<figure>
+												<a href="#"><img src="{% static 'extra-images/how-to-work3.png'%}" alt=""></a>
+											</figure>
+										</div>
+										<div class="text-holder">
+											<h3><a href="#">Elige un plato sabroso</a></h3>
+											<p>Dictum velit. Duis at purus enim. Cras massa massa, maximus sit amet
+												finibus
+												quis, pharetra eu erat.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+									<div class="icon-boxes modern top-center">
+										<div class="img-holder">
+											<figure>
+												<a href="#"><img src="{%static 'extra-images/how-to-work1.png'%}" alt="#"></a>
+											</figure>
+										</div>
+										<div class="text-holder">
+											<h3><a href="#">Recogida o entrega</a></h3>
+											<p>Purus enim. Cras massa massa, maximus sit amet finibus quis, pharetra eu
+												erat.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 45px;padding-bottom: 60px;margin-bottom: 0px;background: #ffffff;">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cs-section-title" style="text-align:center!important;">
+								<h2>Elija entre los más populares</h2>
+								<span style="color:#aaaaaa;">Explora restaurantes, bares y cafeterías por localidad</span>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row">
+								<div class="listing grid-listing three-cols">
+
+									<div class="col-md-4 col-xs-6 grid-listing-col ">
+										<div class="img-holder">
+											<figure>
+												<a href="#"><img src="{% static 'extra-images/cover-photo20-359x212.jpg'%}" alt=""> </a>
+												<figcaption class="listing-meta">
+													<div class="listing-inner clearfix">
+														<div class="list-option">
+															<span class="label bgcolor time-label" style="display: none;"></span>
+															<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i> </a>
+														</div>
+														<div class="list-rating">
+															<div class="rating-star">
+																<span class="rating-box" style="width: 100%;"></span>
+															</div>
+															<span class="reviews">(1)</span>
+														</div>
+													</div>
+												</figcaption>
+											</figure>
+											<span class="restaurant-status close"><em class="bookmarkRibbon"></em>Close</span>
+										</div>
+										<div class="text-holder">
+											<div class="listing-inner">
+												<h4><a href="#">Naturaleza Comida Saludable</a></h4>
+												<p>Jugo de manzana, carne asada, hamburguesa con queso</p>
+												<div class="min-order">Orden mínima<span class="price">S/.15.00</span></div>
+											</div>
+											<div class="listing-footer">
+												<div class="listing-inner clearfix">
+													<div class="img-holder">
+														<a href="#"><img src="{%static 'extra-images/listing-logo03.png'%} " alt=""></a>
+													</div>
+													<div class="text-holder">
+														<p>Bristol, Bristol</p>
+														<p class="deliver-time"><span class="icon-motorcycle2"></span>10
+															min</p>
+														<p class="pickup-time"><span class="icon-clock4"></span>15 min
+														</p>
+														<a href="#" class="ordernow-btn bgcolor">Order Now</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 30px;padding-bottom: 0px;margin-bottom: 0px;background: #eb6825;">
+				<!-- Container Start -->
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cs-calltoaction simple">
+								<div class="cs-text">
+									<strong style="color:#ffffff !important;">Su nuevo año Ordene ahora obtenga el 40% Apagado
+										Off</strong>
+									<span style="color:rgb(255,255,255);">Aliquam est eros, malesuada ut erat sit amet,
+										consectetur sollicitudin sem. Vivam.</span>
+								</div>
+								<a href="#" class="csborder-color cs-color" style="background-color:#f7f7f7 !important;  color:#435061 !important;">Ordenar ahora</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Container Start -->
+			</div>
+			<div class="page-section parallex-bg nopadding cs-nomargin" data-type="background" style="margin-top: 0px;padding-top: 110px;padding-bottom: 90px;margin-bottom: 0px;background: url({% static 'extra-images/call-to-action-paralax.jpg'%}) no-repeat center top / cover fixed #ffffff;">
+				<!-- Container Start -->
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<div class="cs-calltoaction fancy text-center">
+								<div class="img-holder">
+									<i class=" icon-restaurant_menu "></i>
+								</div>
+								<div class="cs-text">
+									<strong style="color:#ffffff !important;">Solo ordene y le entregaremos .
+										.</strong>
+									<span style="color:rgb(255,255,255);"> Pellentesque eget justo eget nibh luctus
+										semper at ut
+										tellus.</span>
+								</div>
+								<a href="#" class="csborder-color cs-color" style="background-color:#eb6825 !important;  color:#ffffff !important;">Ordenar ahora</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Container Start -->
+			</div>
+			<div class="page-section nopadding cs-nomargin" style="margin-top: 0px;padding-top: 90px;padding-bottom: 10px;margin-bottom: 0px; background: #ffffff;">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="cs-section-title" style="text-align:center!important;">
+								<h2>Restaurantes destacados</h2>
+								<span style="color:#aaaaaa;">Cum doctus civibus efficiantur in imperdiet
+									deterruisset.</span>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="listing fancy fancy-simple">
+								<ul class="row">
+									
+									{% for vendor in vendors %}
+									<li class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="list-post featured">
+											<div class="img-holder">
+												<figure>
+													{% if vendor.user_profile.profile_picture %}
+													<a href="#"><img src="{{ vendor.user_profile.profile_picture.url }}" height="125" class="attachment-full size-full wp-post-image" alt=""></a>
+													{% else %}
+													<a href="#"><img src="{% static 'images/default-profile.png' %}" height="125" class="attachment-full size-full wp-post-image" alt=""></a>
+													{% endif %}
+												</figure>
+											</div>
+											<span class="restaurant-status open"><em class="bookmarkRibbon"></em>Open</span>
+											<div class="text-holder">
+												<div class="post-title">
+													<h5><a href="#">{{vendor.vendor_name}}</a>
+														<span class="sponsored text-color">Sponsored</span>
+													</h5>
+												</div>
+												<address>{{vendor.user_profile.address}}</address>
+												<div class="delivery-potions">
+													<div class="post-time"><i class="icon-motorcycle"></i>10 min</div>
+													<div class="post-time"><i class="icon-clock4"></i>15 min</div>
+													
+												</div>
+											</div>
+											<div class="list-option">
+												<a href="#" class="shortlist-btn" data-toggle="modal" data-target="#sign-in"><i class="icon-heart-o"></i></a>
+											</div>
+										</div>
+									 </li>
+
+									{% endfor %}
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-section   nopadding cs-nomargin" style="margin-top: 0px;padding-top: 60px;padding-bottom: 30px;margin-bottom: 0px;background: #ffffff;">
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<div class="element-title align-center">
+								<h2>Atendemos negocios y eventos</h2>
+							</div>
+							<div class="company-logo fancy">
+								<ul>
+									<li>
+										<figure><a href="#"><img src="{%static 'extra-images/partners-logo1.png'%} " alt=""></a></figure>
+									</li>
+									<li>
+										<figure><a href="#"><img src="{%static 'extra-images/partners-logo2.png'%} " alt=""></a></figure>
+									</li>
+									<li>
+										<figure><a href="#"><img src="{%static 'extra-images/partners-logo3.png'%} " alt=""></a></figure>
+									</li>
+									<li>
+										<figure><a href="#"><img src="{%static 'extra-images/partners-logo4.png'%} " alt=""></a></figure>
+									</li>
+									<li>
+										<figure><a href="#"><img src="{%static 'extra-images/partners-logo5.png'%} " alt=""></a></figure>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-section   nopadding cs-nomargin" style="margin-top: 0px;padding-top: 52px;padding-bottom: 0px;margin-bottom: 0px;border-top: 1px #dbdbdb solid;border-bottom: 1px #dbdbdb solid;background: #f0f0f0;">
+				<div class="container ">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+							<div class="main-post promo-box">
+								<div class="img-frame">
+									<figure><img src="{%static 'extra-images/mobile-apps.png'%} " alt=""></figure>
+								</div>
+								<div class="column-text">
+									<h3 style="color:#000000 !important;">¡ConexíonGourmet en tu móvil! Obtén nuestra aplicación</h3>
+									<div class="promo-content">Obtén nuestra aplicación, es la forma más rápida de pedir comida en el ir.
+										</div>
+									<a class="app-btn" href="#"><img src="{%static 'extra-images/app-img1-1.png'%} " alt=""></a>
+									<a class="app-btn" href=""><img src="{%static 'extra-images/app-img2-1.png'%} " alt=""></a>
+									<form>
+										<div class="field-holder">
+											<input class="field-input" type="email" placeholder="Your Email">
+											<label class="field-label-btn"><input class="field-btn" type="submit" value="Send Link"></label>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Main Section End -->
+{% endblock %}
