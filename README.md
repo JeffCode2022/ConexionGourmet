@@ -117,6 +117,5 @@ PAYPAL_CLIENT_ID=tu-client-id
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Contacto
-Tu Nombre - [@tutwitter](https://twitter.com/tutwitter) - email@ejemplo.com
 
-Link del Proyecto: [https://github.com/tu-usuario/conexiongourmet](https://github.com/tu-usuario/conexiongourmet) 
+Link del Proyecto: [https://github.com/JeffCode2022/ConexionGourmet](https://github.com/JeffCode2022/conexionGourmet) 
